@@ -1,2 +1,2 @@
 # todolist
-Simple to do list exercise - learning Java Swing
+Simple to-do list exercise -- learning Java Swing
