@@ -17,11 +17,13 @@ public class ListItem extends JComponent implements ItemListener, Comparable<Lis
         box.addItemListener(this);
     }
 
+    //TODO add effect to checked boxes?
     @Override
     public void itemStateChanged(ItemEvent e) {
 
     }
 
+    //TODO clean up
     @Override
     public int compareTo(ListItem other) {
         return deadline.compareTo(other.deadline);
