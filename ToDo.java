@@ -17,14 +17,11 @@ public class ToDo extends JPanel {
     public ToDo(ArrayList<ListItem> lstItems) {
         super(new BorderLayout());
         ArrayList<ListItem> oldList = new ArrayList<>();
-        fillOld(oldList);
+        fillOld(oldList); // if there are existing list items, pulls them from existing list_items file
         lstItems.addAll(oldList);
         Collections.sort(lstItems);
         listItems = lstItems;
-        //Put the check boxes in a column in a panel
         JPanel checkPanel = new JPanel(new GridLayout(0, 1));
-
-
 
         try {
             FileOutputStream fileOut = new FileOutputStream("./list_items.ser");
@@ -39,8 +36,6 @@ public class ToDo extends JPanel {
         } catch (IOException i) {
             i.printStackTrace();
         }
-
-
 
         setMinimumSize(new Dimension(200, 400));
         setBorder(BorderFactory.createEmptyBorder(60, 60, 60, 90));
@@ -117,13 +112,11 @@ public class ToDo extends JPanel {
                 ans = input.nextLine();
             }
         }
-
-        //Create and set up the content pane.
+        
         JComponent newContentPane = new ToDo(inList);
-        newContentPane.setOpaque(true); //content panes must be opaque
+        newContentPane.setOpaque(true); 
         frame.setContentPane(newContentPane);
-
-        //Display the window.
+        
         frame.pack();
         frame.setVisible(true);
     }
